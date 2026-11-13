@@ -7,7 +7,19 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class HomePage {
+  quetzales: number = 23002553; 
+  dolares: number = 0;
+  tasaCambio: number = 8; 
 
-  constructor() {}
+  constructor() {
+    this.convertir();
+  }
 
+  convertir() {
+    if (this.quetzales) {
+      this.dolares = this.quetzales / this.tasaCambio;
+    } else {
+      this.dolares = 0;
+    }
+  }
 }

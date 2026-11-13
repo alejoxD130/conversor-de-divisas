@@ -1,20 +1,29 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Blank
+      DivisApp 23002553
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-item>
+    <ion-input 
+      label="Cantidad en Quetzales (Q)" 
+      labelPlacement="stacked" 
+      type="number" 
+      [(ngModel)]="quetzales" 
+      (ionInput)="convertir()">
+    </ion-input>
+  </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-card class="ion-margin-top">
+    <ion-card-header>
+      <ion-card-subtitle>Resultado de la conversión</ion-card-subtitle>
+      <ion-card-title>{{ dolares | currency:'USD':'symbol':'1.2-2' }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Tasa de cambio fija: Q8.00 por $1.00
+    </ion-card-content>
+  </ion-card>
 </ion-content>
